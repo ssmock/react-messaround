@@ -6,7 +6,10 @@ import { linkTo } from '@storybook/addon-links';
 
 import { Button, Welcome } from '@storybook/react/demo';
 
-import { BasicClass } from "../components/BasicClass";
+import { BasicClass } from "../components/BasicClass"
+import Functional from "../components/Functional"
+import { PureClass } from '../components/Pure';
+import Memoized from "../components/Memoized";
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -21,4 +24,7 @@ storiesOf('Button', module)
   ));
 
 storiesOf('React Mess', module)
-  .add("Basic, hopefully", () => <BasicClass initialText={'what me see elves?? oh hooray!'} />)
+  .add("Basic", () => <BasicClass initialText={'what me see dwaaaves?? oh hooray!'} />)
+  .add("Functional (simplest)", () => <Functional text={"oui?"} />)
+  .add("Pure", () => <PureClass text="okay" />)
+  .add("Memoized", () => <Memoized text="mi-mo-myyyyy" />)
